@@ -1,13 +1,13 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+let menuItems = [{
+  list1: 'Students',
+  list2: 'Faculty',
+  list2:"What's New",
+  list2:'Tech Trends',
+  list2:'Music',
+  list2:'Log Out'
+}];
 
 /* 
 
@@ -33,3 +33,19 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const Menu =
+document.querySelector('.menu-button');
+
+menuItems.forEach(element =>{
+  console.log('creating panel 2:', element.menuItems)
+})
+
+function createMenu(menuItems){
+  const list1 =
+  document.createElement('div')
+  const list2
+  document.createElement('ul')
+
+  
+}
