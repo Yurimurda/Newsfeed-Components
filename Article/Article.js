@@ -1,7 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
-const data = [
-  {
+const data = [{
     title: 'Lambda School Students: "We\'re the best!"',
     date: 'Nov 5th, 2018',
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
@@ -112,3 +111,90 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+
+
+
+
+const Articles =
+  document.querySelector('.articles');
+
+data.forEach(el => {
+  console.log('creating panel:', el.title)
+
+  Articles.appendChild(createCard(el.title, el.date, el.firstParagraph, el.secondParagraph, el.thirdParagraph))
+})
+
+function createCard(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const articleDiv =
+  document.createElement('div');
+  const titles =
+  document.createElement('h2');
+  const dates =
+  document.createElement('p');
+  const paragraph1 =
+  document.createElement('p');
+  const paragraph2 =
+  document.createElement('p');
+  const paragraph3 =
+  document.createElement('p');
+  const btn =
+  document.createElement('span');
+
+
+
+
+articleDiv.appendChild(titles)
+articleDiv.appendChild(dates)
+articleDiv.appendChild(paragraph1)
+articleDiv.appendChild(paragraph2)
+articleDiv.appendChild(paragraph3)
+articleDiv.appendChild(btn)
+
+articleDiv.classList.add('article')
+titles.classList.add('title')
+dates.classList.add('date')
+paragraph1.classList.add('firstParagraph')
+paragraph2.classList.add('secondParagraph')
+paragraph3.classList.add('thirdParagraph')
+btn.classList.add('expandButton')
+
+titles.textContent = title
+dates.textContent = date
+paragraph1.textContent = firstParagraph
+paragraph2.textContent = secondParagraph
+paragraph3.textContent = thirdParagraph
+btn.textContent = 'BOTTOM TEXT'
+
+btn.addEventListener('click', (e) => {
+  console.log('clicked!');
+  articleDiv.classList.toggle('article-open');
+})
+
+
+
+
+return articleDiv
+}
+
+let newComponents = data.map((title, date, firstParagraph, secondParagraph, thirdParagraph) =>{
+  
+  let newTitle = createCard(title);
+  let newDate = createCard(date);
+  let newFirstParagraph = createCard(firstParagraph);
+  let newSecondParagraph = createCard(secondParagraph);
+  let newThirdParagraph = createCard(thirdParagraph);
+
+newTitle.textContent = title
+newDate.textContent = date
+newFirstParagraph.textContent = firstParagraph
+newSecondParagraph.textContent = secondParagraph
+newThirdParagraph.textContent = thirdParagraph
+
+
+newComponents.appendChild('articles')
+  return newTitle, newDate, newFirstParagraph, newSecondParagraph, newThirdParagraph;
+  
+})
