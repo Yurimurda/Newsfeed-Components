@@ -179,13 +179,28 @@ btn.addEventListener('click', (e) => {
 return articleDiv
 }
 
-let newComponents = data.map((title, date, firstParagraph, secondParagraph, thirdParagraph) =>{
-  
-  let newTitle = createCard(title);
-  let newDate = createCard(date);
-  let newFirstParagraph = createCard(firstParagraph);
-  let newSecondParagraph = createCard(secondParagraph);
-  let newThirdParagraph = createCard(thirdParagraph);
+
+const newSection = 
+document.appendChild('.articles');
+
+data.map()
+
+newSection.appendChild(newComponents(el.title, el.date, el.firstParagraph, el.secondParagraph, el.thirdParagraph))
+
+function newComponents (title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const parent = createCard(parentElement);
+  const newTitle = createCard(title);
+  const newDate = createCard(date);
+  const newFirstParagraph = createCard(firstParagraph);
+  const newSecondParagraph = createCard(secondParagraph);
+  const newThirdParagraph = createCard(thirdParagraph);
+
+  parent.appendChild(newTitle)
+parent.appendChild(newDate)
+parent.appendChild(newFirstParagraph)
+parent.appendChild(newSecondParagraph)
+parent.appendChild(newThirdParagraph)
+//parent.appendChild(btn)
 
 newTitle.textContent = title
 newDate.textContent = date
@@ -194,7 +209,7 @@ newSecondParagraph.textContent = secondParagraph
 newThirdParagraph.textContent = thirdParagraph
 
 
-newComponents.appendChild('articles')
-  return newTitle, newDate, newFirstParagraph, newSecondParagraph, newThirdParagraph;
+newComponents.appendChild('.articles')
+  return parent
   
-})
+}

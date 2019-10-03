@@ -1,13 +1,13 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [{
-  list1: 'Students',
-  list2: 'Faculty',
-  list2:"What's New",
-  list2:'Tech Trends',
-  list2:'Music',
-  list2:'Log Out'
-}];
+let menuItems = [
+   'Students',
+   'Faculty',
+   "What's New",
+   'Tech Trends',
+   'Music',
+  'Log Out'
+];
 
 /* 
 
@@ -34,18 +34,31 @@ let menuItems = [{
   
 */
 
-const Menu =
-document.querySelector('.menu-button');
 
-menuItems.forEach(element =>{
-  console.log('creating panel 2:', element.menuItems)
+const myHeader = document.querySelector('.header');
+myHeader.appendChild(createMenu(menuItems));
+
+
+function createMenu(arr){
+  const theMenu = document.createElement('div');
+  const theList = document.createElement('ul');
+
+  theMenu.appendChild(theList);
+
+  theMenu.classList.add('menu');
+
+  arr.forEach(item =>{
+    let listItem = document.createElement('li');
+    theList.appendChild(listItem);
+    listItem.textContent = item;
+  })
+
+const mButton = document.querySelector('.menu-button');
+mButton.addEventListener("click", () =>{
+  theMenu.classList.toggle('menu--open');
+ 
 })
 
-function createMenu(menuItems){
-  const list1 =
-  document.createElement('div')
-  const list2
-  document.createElement('ul')
-
-  
+  return theMenu;
 }
+
