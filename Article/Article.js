@@ -84,6 +84,29 @@ const data = [{
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'War was beginning.',
+    date: 'In the year 2101',
+    firstParagraph: `Captain: What happen ?
+    Mechanic: Somebody set up us the bomb.
+    Operator: We get signal.
+    Captain: What !
+    Operator: Main screen turn on.
+    Captain: It's you !!`,
+
+    secondParagraph: `CATS: How are you gentlemen !!
+    CATS: All your base are belong to us.
+    CATS: You are on the way to destruction.
+    Captain: What you say !!
+    CATS: You have no chance to survive make your time.
+    CATS: Ha ha ha ha....`,
+
+    thirdParagraph: `Operator: Captain !! *
+    Captain: Take off every 'ZIG'!!
+    Captain: You know what you doing.
+    Captain: Move 'ZIG'.
+    Captain: For great justice.`
   }
 ];
 
@@ -168,7 +191,7 @@ paragraph2.textContent = secondParagraph
 paragraph3.textContent = thirdParagraph
 btn.textContent = 'BOTTOM TEXT'
 
-btn.addEventListener('click', (e) => {
+btn.addEventListener('click', () => {
   console.log('clicked!');
   articleDiv.classList.toggle('article-open');
 })
